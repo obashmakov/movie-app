@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Movie from './components/Movie/Movie';
 import './App.scss';
-import { Switch, Link, Route } from 'react-router-dom';
+import { Episode } from './components/Episode';
 
-export const App = () => (
-  <div>
-    React starter pack
-    <div>
-      <nav className="nav">
-        <Link to="/">Home</Link>
-        <Link to="/users">Users</Link>
-      </nav>
+export const App = () => {
+  const [episodeInfo, setEpisodeInfo] = useState({});
 
+  return (
+    <div className="container">
       <Switch>
-        <Route path="/users">
-          <div>Users page</div>
+        <Route path={`/${episodeInfo.id}`}>
+          <Episode episode={episodeInfo} />
         </Route>
+
         <Route path="/">
-          <div>Home page</div>
+          <Movie setEpisodeInfo={setEpisodeInfo} />
         </Route>
       </Switch>
     </div>
-  </div>
-);
+  );
+};

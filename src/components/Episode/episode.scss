@@ -1,0 +1,45 @@
+.episode {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__image {
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    max-width: 500px;
+    margin-bottom: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    text-align: center;
+  }
+
+  &__info {
+    width: 200px;
+    margin-bottom: 20px;
+
+    padding: 10px;
+    text-align: center;
+
+    background-color: rgb(238, 238, 238);
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  &__link {
+    color: black;
+    transition: 200ms;
+
+    &:hover {
+      color: rgb(100, 100, 247);
+    }
+  }
+}
