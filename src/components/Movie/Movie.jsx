@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMovie } from '../../redux/actions';
 import { EpisodesList } from '../EpisodesList';
 import './movie.scss';
 
-const Movie = () => {
+const Movie = ({ setEpisodeInfo }) => {
   const dispatch = useDispatch();
   const movie = useSelector((state) => {
     if (Object.keys(state.movies.movies).length > 0) {
@@ -15,8 +15,6 @@ const Movie = () => {
   useEffect(() => {
     dispatch(getMovie());
   }, [dispatch, getMovie]);
-
-  console.log(movie)
 
   return (
     <div className="movie">
@@ -33,7 +31,10 @@ const Movie = () => {
             />
             {movie.summary.replace('<p>', '').replace('</p>', '').replace('<b>', '').replace('</b>', '')}
           </p>
-          <EpisodesList episodes={movie._embedded.episodes} />
+          <EpisodesList
+            setEpisodeInfo={setEpisodeInfo}
+            episodes={movie._embedded.episodes}
+          />
         </>
       )}
     </div>

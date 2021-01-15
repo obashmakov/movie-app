@@ -2,10 +2,6 @@
   width: 700px;
 
   &__item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    
     font-size: 14px;
     cursor: pointer;
     transition: 200ms;
@@ -24,6 +20,14 @@
 
     font-size: 12px;
     text-align: left;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    color: black;
   }
 }
 

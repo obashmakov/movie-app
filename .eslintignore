@@ -1,2 +1,4 @@
 src/store/index.js
 Movie.jsx
+EpisodesList.jsx
+Episode.jsx

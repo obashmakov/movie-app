@@ -1,5 +1,6 @@
 {
   "name": "react-app",
+  "homepage": "https://obashmakov.github.io/movie-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
