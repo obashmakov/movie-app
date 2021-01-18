@@ -8,11 +8,13 @@ export const Episode = ({ episode }) => (
     <h1 className="episode__title">
       {episode.name}
     </h1>
-    <img
-      className="episode__image"
-      src={episode.image.medium}
-      alt="cartoon"
-    />
+    {episode.image && (
+      <img
+        className="episode__image"
+        src={episode.image.medium}
+        alt="cartoon"
+      />
+    )}
     {episode.summary && (
       <p className="episode__description">
         {episode.summary.replace('<p>', '').replace('</p>', '').replace('<b>', '').replace('</b>', '')}

@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMovie } from '../../redux/actions';
-import { EpisodesList } from '../EpisodesList';
+import { Seasons } from '../Seasons';
+// import { EpisodesList } from '../EpisodesList';
+
 import './movie.scss';
 
 const Movie = ({ setEpisodeInfo }) => {
@@ -31,9 +33,9 @@ const Movie = ({ setEpisodeInfo }) => {
             />
             {movie.summary.replace('<p>', '').replace('</p>', '').replace('<b>', '').replace('</b>', '')}
           </p>
-          <EpisodesList
-            setEpisodeInfo={setEpisodeInfo}
+          <Seasons
             episodes={movie._embedded.episodes}
+            setEpisodeInfo={setEpisodeInfo}
           />
         </>
       )}

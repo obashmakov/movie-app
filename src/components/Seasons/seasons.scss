@@ -1,0 +1,56 @@
+.seasons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__button {
+    width: 700px;
+    height: 37px;
+    margin-bottom: 5px;
+
+    font-size: 18px;
+
+    cursor: pointer;
+  }
+
+  &__dropdown {
+    width: 20px;
+    margin-left: 10px;
+    transition: 300ms;
+
+    &--active {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .seasons {
+    &__button {
+      width: 500px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .seasons {
+    &__button {
+      width: 300px;
+    }
+  }
+}
+
+.display-enter {
+  opacity: 0;
+}
+.display-enter-active {
+  opacity: 1;
+  transition: opacity 400ms;
+}
+.display-exit {
+  opacity: 1;
+}
+.display-exit-active {
+  opacity: 0;
+  transition: opacity 400ms;
+}
